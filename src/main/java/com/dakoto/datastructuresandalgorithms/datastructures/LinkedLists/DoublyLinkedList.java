@@ -8,6 +8,7 @@ public class DoublyLinkedList<T> extends SinglyLinkedList<T> {
 
     private DoublyLinkedList<T> previous;
 
+
     public DoublyLinkedList(T headValue) {
         super(headValue);
     }
