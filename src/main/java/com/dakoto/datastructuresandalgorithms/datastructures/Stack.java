@@ -7,6 +7,7 @@ public class Stack<T> implements DataStructure {
     private SinglyLinkedList<T> linkedList;
 
     private int size = 0;
+    private boolean empty;
 
     public void push(T value){
 
@@ -44,7 +45,10 @@ public class Stack<T> implements DataStructure {
         SinglyLinkedList<T> popped = new SinglyLinkedList<T>(this.linkedList.getValue());
 
         this.linkedList = this.linkedList.next();
-        this.linkedList.setIshead(true);
+        if (this.linkedList != null)
+            this.linkedList.setIshead(true);
+        else
+            this.setEmpty(true);
 
         this.size--;
 
@@ -64,9 +68,9 @@ public class Stack<T> implements DataStructure {
     @Override
     public void traverse() {
 
-        System.out.println("############################ traversing Queue");
+        System.out.println("############################ traversing Stack");
         this.linkedList.traverse();
-        System.out.println("############################ done traversing Queue");
+        System.out.println("############################ done traversing Stack");
     }
 
     @Override
@@ -81,5 +85,13 @@ public class Stack<T> implements DataStructure {
     public int getSize() {
 
         return this.size;
+    }
+
+    public void setEmpty(boolean empty) {
+        this.empty = empty;
+    }
+
+    public boolean isEmpty() {
+        return empty;
     }
 }

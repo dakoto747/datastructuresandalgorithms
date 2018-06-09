@@ -1,5 +1,8 @@
 package com.dakoto.datastructuresandalgorithms.Questions;
 
+import com.dakoto.datastructuresandalgorithms.datastructures.LinkedLists.SinglyLinkedList;
+import com.dakoto.datastructuresandalgorithms.datastructures.Stack;
+
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
@@ -11,7 +14,7 @@ import java.time.temporal.ChronoUnit;
 //BRUTE FORCE
 public class BloombergQuestions {
 
-    public void bestTimeToBuyAndSellStock(int[] array){
+    public static int bestTimeToBuyAndSellStock(int[] stocks){
         /*
 
         Say you have an array for which the ith element is the price of a given stock on day i.
@@ -28,10 +31,26 @@ public class BloombergQuestions {
         In this case, no transaction is done, i.e. max profit = 0.
      */
 
+        int max = 0;
+        for(int i = 0; i < stocks.length-1; i++){
+
+            for(int j = i; j < stocks.length; j++){
+                max = Math.max(stocks[j]- stocks[i], max);
+            }
+        }
+
+        int min = stocks[0] ;
+        int maxProfit = 0;
+
+        for(int i = 1; i < stocks.length; i++){
+            maxProfit = Math.max(maxProfit, stocks[i] - min);
+            min = Math.max(min, stocks[i]);
+        }
+        return maxProfit;
     }
 
 
-    public void addTwoNumbers(){
+    public static SinglyLinkedList<Integer> addTwoNumbers(SinglyLinkedList<Integer> a, SinglyLinkedList<Integer> b){
         /*
             hint: use 2 stacks and a carry variable..
 
@@ -48,9 +67,80 @@ public class BloombergQuestions {
             Input: (7 -> 2 -> 4 -> 3) + (5 -> 6 -> 4) Output: 7 -> 8 -> 0 -> 7
          */
 
+        Stack<Integer> stackA = new Stack<>();
+        Stack<Integer> stackB = new Stack<>();
+
+        while(a != null){
+            stackA.push(a.getValue());
+            a = a.next();
+        }
+        while(b != null){
+            stackB.push(b.getValue());
+            b = b.next();
+        }
+
+        System.out.println("$$");
+        stackA.traverse();
+        System.out.println("$$");
+        stackB.traverse();
+        System.out.println("$$");
+
+        int sum = 0;
+        SinglyLinkedList<Integer> returnList = null;
+        boolean carry = false;
+        while(stackA.getSize() != 0 || stackB.getSize() != 0 || carry ){
+
+            if(carry){
+                sum+=1;
+            }
+
+            if(stackA.getSize() != 0){
+                sum += stackA.pop().getValue();
+            }
+            if(stackB.getSize() != 0){
+                sum += stackB.pop().getValue();
+            }
+            if(sum > 9){
+                carry = true;
+                sum = sum%10 ;
+            }else{
+                carry = false;
+            }
+
+            if (returnList == null){
+
+                returnList = new SinglyLinkedList<Integer>(sum);
+            }else{
+
+                SinglyLinkedList<Integer> buffer = new SinglyLinkedList<>(sum);
+                buffer.setNext(returnList);
+                returnList = buffer;
+            }
+            sum = 0;
+        }
+        return returnList;
+
     }
 
+    public static SinglyLinkedList<Integer> createSinglyLinkedListFromInteger(int integer){
 
+        int digit = integer % 10;
+        integer /= 10;
+
+        SinglyLinkedList<Integer> list = new SinglyLinkedList<>(digit);
+
+        while(integer > 9){
+            digit = integer % 10;
+            SinglyLinkedList<Integer> buffer = new SinglyLinkedList<>(digit);
+            buffer.setNext(list);
+            list = buffer;
+            integer /= 10;
+        }
+        SinglyLinkedList<Integer> buffer = new SinglyLinkedList<>(integer);
+        buffer.setNext(list);
+
+        return buffer;
+    }
     public void copyListWithRandomPointer(){
         /*
 
@@ -206,16 +296,33 @@ Assume that:
 
         Note: Your algorithm should run in linear runtime complexity. Could you implement it using only constant extra space complexity?
          */
+        return 0;
     }
 
     public static void main(String args[]){
+
+
+
+        System.out.println("Create singly linkedlist start");
+        SinglyLinkedList<Integer> list = createSinglyLinkedListFromInteger(7243);
+        SinglyLinkedList<Integer> list1 = createSinglyLinkedListFromInteger(564);
+        addTwoNumbers(list, list1).traverse();
+        System.out.println("Create singly linkedlist end");
 
         int profit = 0;
 
         int prices[] = {3, 693,5,61,57,2,67,7,700, 1000};
 //        int prices[]={2,67,7,700};
 //        sort it and sum all the differences;
+        int b[] = {7, 1, 5, 3, 6, 4};
 
+        int c[] = {7, 6, 4, 3, 1};
+
+        System.out.println("stocks start");
+        System.out.println("prices A:"+bestTimeToBuyAndSellStock(prices));
+        System.out.println("prices B:"+bestTimeToBuyAndSellStock(b));
+        System.out.println("prices C:"+bestTimeToBuyAndSellStock(c));
+        System.out.println("stocks end");
 
         for(int i = 1; i < prices.length; i++){
             profit += Math.max(prices[i]-prices[i-1],0);

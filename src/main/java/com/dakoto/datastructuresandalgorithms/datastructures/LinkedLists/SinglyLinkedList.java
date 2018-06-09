@@ -13,6 +13,9 @@ public class SinglyLinkedList<T> implements DataStructure {
     private int size;
 
 
+    public SinglyLinkedList() {
+    }
+
     public SinglyLinkedList(T headValue){
 
         this.value = headValue;
@@ -57,6 +60,7 @@ public class SinglyLinkedList<T> implements DataStructure {
             System.out.println(String.valueOf(buffer.getValue()));
             buffer = buffer.next();
         }
+
     }
 
     @Override
