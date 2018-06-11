@@ -111,6 +111,8 @@ public class Tips {
          * binary search: logn
          *
          * think specific and pedantic, not spiritual
+         *
+         * Articulate your thoughts, nuances, and subtext. Communicate!
          */
     }
 

@@ -1,8 +1,9 @@
 package com.dakoto.datastructuresandalgorithms.datastructures.LinkedLists;
 
 import com.dakoto.datastructuresandalgorithms.datastructures.DataStructure;
+import com.dakoto.datastructuresandalgorithms.datastructures.bugs.List;
 
-public class SinglyLinkedList<T> implements DataStructure {
+public class SinglyLinkedList<T> implements DataStructure, List {
 
     private T value;
 
@@ -74,5 +75,77 @@ public class SinglyLinkedList<T> implements DataStructure {
     @Override
     public int getSize() {
         return this.size;
+    }
+
+    @Override
+    public SinglyLinkedList<Integer> createFromInteger(int integer){
+
+        int digit = integer % 10;
+        integer /= 10;
+
+        SinglyLinkedList<Integer> list = new SinglyLinkedList<>(digit);
+
+        while(integer > 9){
+            digit = integer % 10;
+            SinglyLinkedList<Integer> buffer = new SinglyLinkedList<>(digit);
+            buffer.setNext(list);
+            list = buffer;
+            integer /= 10;
+        }
+        SinglyLinkedList<Integer> buffer = new SinglyLinkedList<>(integer);
+        buffer.setNext(list);
+
+        return buffer;
+    }
+
+    @Override
+    public SinglyLinkedList<T> detectCycle(){
+//  1. Create two pointers, FastPointer and SlowPointer.
+//  2. MoveFastPointeratarateof2stepsandSlowPointeratarateof1step.
+//  3. When they collide, move SlowPointer to LinkedListHead. Keep FastPointer where it is.
+//  4. Move SlowPointer and FastPointer at a·rate of one step. Return the new collision point.
+        SinglyLinkedList<T> list = createDeepCopy();
+        SinglyLinkedList<T> slowPointer = list;
+        SinglyLinkedList<T> fastPointer = list;// can't handle tiny lists, refactor this
+
+        while(fastPointer != null && fastPointer.next() != null){
+            //prone to stackoverflow error if there is no cycle || count the number of times slow pointer has seen the head or null
+            slowPointer = slowPointer.next();
+            fastPointer = fastPointer.next().next();
+
+            if(fastPointer.getValue() == slowPointer.getValue()){
+                break;
+            }
+        }
+
+        if(fastPointer == null || fastPointer.next() ==null){
+
+            return null;
+        }else{
+
+            slowPointer = list;
+            while(fastPointer.getValue() != slowPointer.getValue()){
+                fastPointer = fastPointer.next();
+                slowPointer = slowPointer.next();
+            }
+            return fastPointer;
+        }
+    }
+
+    @Override
+    public SinglyLinkedList<T> createDeepCopy(){
+
+        SinglyLinkedList<T> copy = new SinglyLinkedList<>(this.value);
+
+        SinglyLinkedList<T> copyBuffer = new SinglyLinkedList<>();
+        SinglyLinkedList<T> buffer = this.next();
+
+        while(buffer != null){
+            copy.setValue(buffer.value);
+            copy = copy.next();
+            buffer = buffer.next();
+        }
+
+        return copy;
     }
 }

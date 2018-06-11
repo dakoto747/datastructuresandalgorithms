@@ -117,25 +117,6 @@ public class BloombergQuestions {
 
     }
 
-    public static SinglyLinkedList<Integer> createSinglyLinkedListFromInteger(int integer){
-
-        int digit = integer % 10;
-        integer /= 10;
-
-        SinglyLinkedList<Integer> list = new SinglyLinkedList<>(digit);
-
-        while(integer > 9){
-            digit = integer % 10;
-            SinglyLinkedList<Integer> buffer = new SinglyLinkedList<>(digit);
-            buffer.setNext(list);
-            list = buffer;
-            integer /= 10;
-        }
-        SinglyLinkedList<Integer> buffer = new SinglyLinkedList<>(integer);
-        buffer.setNext(list);
-
-        return buffer;
-    }
     public void copyListWithRandomPointer(SinglyLinkedList<Integer> list){
         /*
 
@@ -381,8 +362,8 @@ Assume that:
         System.out.println("Move zeros");
 
         System.out.println("Create singly linkedlist start");
-        SinglyLinkedList<Integer> list = createSinglyLinkedListFromInteger(7243);
-        SinglyLinkedList<Integer> list1 = createSinglyLinkedListFromInteger(564);
+        SinglyLinkedList<Integer> list = new SinglyLinkedList<Integer>().createFromInteger(7243);
+        SinglyLinkedList<Integer> list1 = new SinglyLinkedList<Integer>().createFromInteger(564);
         addTwoNumbers(list, list1).traverse();
         System.out.println("Create singly linkedlist end");
 

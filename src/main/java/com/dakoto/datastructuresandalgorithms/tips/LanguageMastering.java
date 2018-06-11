@@ -1,4 +1,4 @@
-package com.dakoto.datastructuresandalgorithms;
+package com.dakoto.datastructuresandalgorithms.tips;
 
 public class LanguageMastering {
 
