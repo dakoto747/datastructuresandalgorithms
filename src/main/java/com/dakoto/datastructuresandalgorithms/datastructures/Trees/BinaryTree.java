@@ -70,8 +70,12 @@ public class BinaryTree<T> implements Tree, Search<T> {
     }
 
     @Override
-    public void getHeight() {
+    public int getHeight() {
 
+        int left = (this.leftChild != null)? this.leftChild.getHeight() : 0;
+        int right = (this.rightChild != null)? this.rightChild.getHeight() : 0;
+
+        return Math.max(left, right) + 1;
     }
 
     @Override

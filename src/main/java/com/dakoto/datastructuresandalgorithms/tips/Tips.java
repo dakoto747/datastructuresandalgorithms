@@ -22,6 +22,18 @@ public class Tips {
 
 //    there are edge case questions, algorithms questions, data structures questions, data structures and algorithms
 
+
+//    arrays: play with runners, trackers, modulus, hashmaps, sequence math, indexes and loop invariants
+//    characters: xor
+//    digits: 10 and modulus, xor, bit manipulation,
+//    stacks: reverse, implement with linked lists(reset head), read from back to front,
+//    queues: implement with linkedlist(keep track of head and tail, update tail),
+//    trees: depth first search,
+//    misc: Math.max
+//    search: hashmap, binary, pivot, add/duplicate
+//    linkedlist: be reference aware
+//    prefix tree: quick lookup
+//
 // PROBLEM REPRESENTATION: CONVERT YOUR PROBLEM TO MATCH MATH/CS/DATA-STRUCTURES AND ALGORITHMS
     //after optimization think like an intruder? edge cases and building a gate using math
     //use first order logic and math to validate design; software architecture, github project. user management, role, customer, customer account, workflow, etc as use case; show how new features affect things
@@ -76,6 +88,10 @@ public class Tips {
          * leverage
          * topological sort: loop unrolling
          * hashing
+         * map reduce
+         *
+         * math.max, math.abs, modulus, middle = start+finish/2 or
+         *
          * frequency lists
          * lookup tables
          * multiple scans O(2N)

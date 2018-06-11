@@ -5,6 +5,7 @@ import com.dakoto.datastructuresandalgorithms.datastructures.Stack;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.Arrays;
 
 /**
  *  Sources:
@@ -79,12 +80,6 @@ public class BloombergQuestions {
             b = b.next();
         }
 
-        System.out.println("$$");
-        stackA.traverse();
-        System.out.println("$$");
-        stackB.traverse();
-        System.out.println("$$");
-
         int sum = 0;
         SinglyLinkedList<Integer> returnList = null;
         boolean carry = false;
@@ -141,7 +136,7 @@ public class BloombergQuestions {
 
         return buffer;
     }
-    public void copyListWithRandomPointer(){
+    public void copyListWithRandomPointer(SinglyLinkedList<Integer> list){
         /*
 
             A linked list is given such that each node contains an additional random pointer which could
@@ -150,6 +145,80 @@ public class BloombergQuestions {
             Return a deep copy of the list.
          */
 
+
+    }
+
+    public static int[] moveZeros(int []array){
+        /*
+        Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of
+        the non-zero elements.
+
+For example, given nums = [0, 1, 0, 3, 12], after calling your function, nums should be [1, 3, 12, 0, 0].
+
+Note: You must do this in-place without making a copy of the array. Minimize the total number of operations.
+
+
+         */
+        int idx = 0;
+        boolean reset = false;
+        for(int i = 0; i < array.length; i++){
+            if(reset && array[i] != 0){
+                array[idx] = array[i];
+                array[i] = array[i+1];
+                reset = false;
+            }
+            if(array[i] == 0 && !reset){
+                idx = i;
+                reset = true;
+            }
+
+        }
+        return array;
+    }
+
+    public static int[] searchForRange(int []array, int target){
+        /*
+        Given an array of integers nums sorted in ascending order,
+        find the starting and ending position of a given target value.
+
+        Your algorithm's runtime complexity must be in the order of O(log n).
+
+        If the target is not found in the array, return [-1, -1].
+
+
+         */
+        return searchForRangeRecurse(array, target, 0, array.length-1);
+    }
+
+    public static int[] searchForRangeRecurse(int[] range, int target, int start, int finish){
+        if(finish < start ) { return null;}
+
+        int middle = start + (finish - start)/2;
+
+        if(target > range[middle]){
+
+            return searchForRangeRecurse(range, target, middle+1, finish);
+        }else if (target < range[middle]){
+
+            return searchForRangeRecurse(range, target, start, middle-1);
+        }else{
+
+            int i = middle+1;
+
+            while(i < finish && target == range[i] ){
+                i++;
+            }
+
+            int k = middle -1;
+            while (k > -1 && target == range[k]){
+                k--;
+            }
+            if(middle > 0 && target == range[middle-1] )
+                return new int[]{middle-1};
+
+            return new int[]{k+1, i-1};
+
+        }
     }
 
     public void romanToInteger(){
@@ -302,6 +371,14 @@ Assume that:
     public static void main(String args[]){
 
 
+        System.out.println("Search range start");
+        System.out.println(Arrays.toString(searchForRange(new int[]{1,3}, 1)));
+        System.out.println("Search range end");
+
+
+        System.out.println("Move zeros");
+        System.out.println(Arrays.toString(moveZeros(new int[]{0, 1, 0, 3, 12})));
+        System.out.println("Move zeros");
 
         System.out.println("Create singly linkedlist start");
         SinglyLinkedList<Integer> list = createSinglyLinkedListFromInteger(7243);
@@ -318,7 +395,7 @@ Assume that:
 
         int c[] = {7, 6, 4, 3, 1};
 
-        System.out.println("stocks start");
+        System.out.println("stocks start".contains("h"));
         System.out.println("prices A:"+bestTimeToBuyAndSellStock(prices));
         System.out.println("prices B:"+bestTimeToBuyAndSellStock(b));
         System.out.println("prices C:"+bestTimeToBuyAndSellStock(c));

@@ -14,6 +14,6 @@ public interface Tree extends DataStructure {
 
     void insert();
 
-    void getHeight();
+    int getHeight();
 
 }
