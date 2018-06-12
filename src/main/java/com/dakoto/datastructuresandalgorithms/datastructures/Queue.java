@@ -3,7 +3,7 @@ package com.dakoto.datastructuresandalgorithms.datastructures;
 import com.dakoto.datastructuresandalgorithms.datastructures.LinkedLists.SinglyLinkedList;
 
 public class Queue<T> implements DataStructure {
-
+//reset tail
     private SinglyLinkedList<T> head;
 
     private SinglyLinkedList<T> tail;

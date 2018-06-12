@@ -100,10 +100,12 @@ public class SinglyLinkedList<T> implements DataStructure, List {
 
     @Override
     public SinglyLinkedList<T> detectCycle(){
+
 //  1. Create two pointers, FastPointer and SlowPointer.
 //  2. MoveFastPointeratarateof2stepsandSlowPointeratarateof1step.
 //  3. When they collide, move SlowPointer to LinkedListHead. Keep FastPointer where it is.
 //  4. Move SlowPointer and FastPointer at a·rate of one step. Return the new collision point.
+
         SinglyLinkedList<T> list = createDeepCopy();
         SinglyLinkedList<T> slowPointer = list;
         SinglyLinkedList<T> fastPointer = list;// can't handle tiny lists, refactor this

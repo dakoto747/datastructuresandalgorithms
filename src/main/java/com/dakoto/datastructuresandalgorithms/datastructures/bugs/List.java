@@ -22,6 +22,11 @@ public interface List {
         return null;
     }
 
+    default boolean isIdenticalTo(List otherList){
+
+        return false;
+    }
+
 
 
 }

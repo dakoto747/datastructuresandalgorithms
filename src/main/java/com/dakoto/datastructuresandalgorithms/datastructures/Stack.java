@@ -3,7 +3,7 @@ package com.dakoto.datastructuresandalgorithms.datastructures;
 import com.dakoto.datastructuresandalgorithms.datastructures.LinkedLists.SinglyLinkedList;
 
 public class Stack<T> implements DataStructure {
-
+//reset head
     private SinglyLinkedList<T> linkedList;
 
     private int size = 0;
