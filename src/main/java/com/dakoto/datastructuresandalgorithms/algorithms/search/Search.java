@@ -3,9 +3,12 @@ package com.dakoto.datastructuresandalgorithms.algorithms.search;
 public interface Search<T> {
 //DFS and BFS aren't only for graphs
 
-    T breadFirstSearch();
+    default Boolean breadthFirstSearch(T searchKey){
 
-    default T depthFirstSearch(){
+        return false;
+    }
+
+    default Boolean depthFirstSearch(T searchKey){
         /*
         Note that pre-order and other forms of tree traversal are a form of DFS.
         The key difference is that when implementing this algorithm for a graph,
@@ -13,8 +16,11 @@ public interface Search<T> {
         If we don't, we risk getting stuck in an infinite loop.
 
          */
-        return null;
+        return false;
     }
 
-    T search();
+    default Boolean search(T searchKey){
+
+        return false;
+    }
 }

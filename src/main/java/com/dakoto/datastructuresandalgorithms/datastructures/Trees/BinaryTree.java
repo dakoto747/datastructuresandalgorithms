@@ -94,17 +94,17 @@ public class BinaryTree<T> implements Tree, Search<T> {
     }
 
     @Override
-    public T breadFirstSearch() {
+    public Boolean breadthFirstSearch(T searchKey) {
         return null;
     }
 
     @Override
-    public T depthFirstSearch() {
+    public Boolean depthFirstSearch(T searchKey) {
         return null;
     }
 
     @Override
-    public T search() {
+    public Boolean search(T searchKey) {
         return null;
     }
 }
