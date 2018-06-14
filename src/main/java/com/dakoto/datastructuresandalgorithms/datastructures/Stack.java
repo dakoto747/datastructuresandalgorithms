@@ -40,9 +40,9 @@ public class Stack<T> implements DataStructure {
         }
     }
 
-    public SinglyLinkedList<T> pop() {
+    public T pop() {
 
-        SinglyLinkedList<T> popped = new SinglyLinkedList<T>(this.linkedList.getValue());
+        T popped = this.linkedList.getValue();
 
         this.linkedList = this.linkedList.next();
         if (this.linkedList != null)

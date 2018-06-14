@@ -1,6 +1,7 @@
 package com.dakoto.datastructuresandalgorithms.datastructures.Trees;
 
 import com.dakoto.datastructuresandalgorithms.algorithms.search.Search;
+import com.dakoto.datastructuresandalgorithms.datastructures.Queue;
 
 public class BinaryTree<T> implements Tree, Search<T> {
 
@@ -42,6 +43,26 @@ public class BinaryTree<T> implements Tree, Search<T> {
     @Override
     public void levelOrderTraverse() {
 
+        Queue<BinaryTree<T>> nodes = new Queue<BinaryTree<T>>();
+        nodes.enqueue(this);
+
+        while(!nodes.isEmpty()){
+
+            BinaryTree<T> currentNode =nodes.dequeue();
+            visit(currentNode);
+
+            if(currentNode.rightChild != null){
+                nodes.enqueue(rightChild);
+            }
+
+            if(currentNode.leftChild != null){
+                nodes.enqueue(leftChild);
+            }
+        }
+    }
+
+    public void visit(BinaryTree node){
+        System.out.println(node.getValue());
     }
 
     public void inOrderTraverse(){
@@ -89,22 +110,27 @@ public class BinaryTree<T> implements Tree, Search<T> {
     }
 
     @Override
+    public boolean isEmpty() {
+        return this.value == null;
+    }
+
+    @Override
     public int getSize() {
         return 0;
     }
 
     @Override
-    public Boolean breadthFirstSearch(T searchKey) {
-        return null;
+    public boolean breadthFirstSearch(T searchKey) {
+        return false;
     }
 
     @Override
-    public Boolean depthFirstSearch(T searchKey) {
-        return null;
+    public boolean depthFirstSearch(T searchKey) {
+        return false;
     }
 
     @Override
-    public Boolean search(T searchKey) {
-        return null;
+    public boolean search(T searchKey) {
+        return false;
     }
 }

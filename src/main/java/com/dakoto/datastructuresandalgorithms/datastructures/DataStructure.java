@@ -8,6 +8,8 @@ public interface DataStructure {
 
     void empty();
 
+    boolean isEmpty();
+
     int getSize();
 
 }

@@ -25,9 +25,9 @@ public class Queue<T> implements DataStructure {
         this.size++;
     }
 
-    public SinglyLinkedList dequeue(){
+    public T dequeue(){
 
-        SinglyLinkedList<T> returnValue = this.head;
+        T returnValue = this.head.getValue();
 
         this.head = this.head.next(); //show off pass by reference
 
@@ -73,9 +73,14 @@ public class Queue<T> implements DataStructure {
 
         while(this.tail != null){
 
-            SinglyLinkedList<T> node = this.dequeue();
-            System.out.println(node.getValue());
+            T node = this.dequeue();
+            System.out.println(node);
         }
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return this.size == 0;
     }
 
     @Override

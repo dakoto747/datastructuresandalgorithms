@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AdjacencyList<T> implements Search<T> {
+public class AdjacencyList<T> implements Graph<T>, Search<T> {
 //use examples: bank structure as graph, prefix tree, etc.
     // routes, friends, etc on linkedlist
     //always use examples! application based learning
@@ -18,7 +18,11 @@ public class AdjacencyList<T> implements Search<T> {
 
     public boolean visited = false;
 
-    public void addNode(){
+    public void addNode(T node, T child){
+
+    }
+
+    public void addNode(T node, ArrayList<T> children){
 
     }
 
@@ -27,7 +31,8 @@ public class AdjacencyList<T> implements Search<T> {
     }
 
 
-    public Boolean depthFirstSearch(T searchKey) {
+
+    public boolean depthFirstSearch(T searchKey) {
         /* this seems to be for trees
         The pseudocode below implements DFS.
 
@@ -59,6 +64,7 @@ public class AdjacencyList<T> implements Search<T> {
                 if(node.equals(searchKey)){
                     return true;
                 }
+
                 for(T child : adjancencyList.get(node)){
                     return searchNode(searchKey, nodes, adjancencyList, visited);
                 }
