@@ -3,17 +3,19 @@ package com.dakoto.datastructuresandalgorithms.datastructures.Trees;
 import com.dakoto.datastructuresandalgorithms.algorithms.search.Search;
 import com.dakoto.datastructuresandalgorithms.datastructures.Queue;
 
-public class BinaryTree<T> implements Tree, Search<T> {
+public class BinaryTree<T> implements Tree<T>, Search<T> {
 
-    private T value;
+    protected T value;
 
-    private BinaryTree<T> leftChild;
+    protected BinaryTree<T> leftChild;
 
-    private BinaryTree<T> rightChild;
+    protected BinaryTree<T> rightChild;
 
-    public BinaryTree(T headValue){
+    public BinaryTree(){}
 
-        this.value = headValue;
+    public BinaryTree(T rootValue){
+
+        this.value = rootValue;
     }
 
     public T getValue() {
@@ -67,13 +69,13 @@ public class BinaryTree<T> implements Tree, Search<T> {
 
     public void inOrderTraverse(){
         this.leftChild.inOrderTraverse();
-        System.out.println(getValue());
+        visit(this);
         this.rightChild.inOrderTraverse();
     }
 
     @Override
     public void preOrderTraverse() {
-        System.out.println(getValue());
+        visit(this);
         this.leftChild.preOrderTraverse();
         this.rightChild.preOrderTraverse();
     }
@@ -82,11 +84,11 @@ public class BinaryTree<T> implements Tree, Search<T> {
     public void postOrderTraverse() {
         this.leftChild.postOrderTraverse();
         this.rightChild.postOrderTraverse();
-        System.out.println(getValue());
+        visit(this);
     }
 
     @Override
-    public void insert() {
+    public void insert(T node) {
 
     }
 
@@ -98,6 +100,49 @@ public class BinaryTree<T> implements Tree, Search<T> {
 
         return Math.max(left, right) + 1;
     }
+
+    @Override
+    public T getLeftMostElement() {
+        return getLeftMostNode().getValue();
+    }
+
+    @Override
+    public T getRightMostElement() {
+        return getRightMostNode().getValue();
+    }
+
+    @Override
+    public BinaryTree<T> getLeftMostNode() {
+        if(this.value == null) {
+            return null;
+        }
+        if(this.leftChild == null){
+            return this;
+        }
+        BinaryTree<T> buffer = this;
+
+        while(buffer.leftChild != null){
+            buffer = buffer.leftChild;
+        }
+        return buffer;
+    }
+
+    @Override
+    public BinaryTree<T> getRightMostNode() {
+        if(this.value == null) {
+            return null;
+        }
+        if(this.rightChild == null){
+            return this;
+        }
+        BinaryTree<T> buffer = this;
+
+        while(buffer.rightChild != null){
+            buffer = buffer.rightChild;
+        }
+        return buffer;
+    }
+
 
     @Override
     public void test() {

@@ -83,6 +83,14 @@ public class Tips2 {
      *
      *
      * DFS and BFS aren't only for graphs
+     *
+     * methods of traversing datastrucures:
+     *  1. Iteratively
+     *  2. Runnners
+     *  3. index manipulation
+     *  4. dfs
+     *  5. bfs
+     *
      * Note that pre-order and other forms of tree traversal are a form of DFS. The key difference is that when implementing this algorithm for a graph, we must check if the node has been visited. If we don't, we risk getting stuck in an infinite loop.
 
      */

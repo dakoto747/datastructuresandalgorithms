@@ -2,7 +2,7 @@ package com.dakoto.datastructuresandalgorithms.datastructures.Trees;
 
 import com.dakoto.datastructuresandalgorithms.datastructures.DataStructure;
 
-public interface Tree extends DataStructure {
+public interface Tree<T> extends DataStructure {
 
     void levelOrderTraverse();
 
@@ -12,8 +12,17 @@ public interface Tree extends DataStructure {
 
     void postOrderTraverse();
 
-    void insert();
+    void insert(T node);
 
     int getHeight();
+
+    T getLeftMostElement();
+
+    T getRightMostElement();
+
+    Tree<T> getLeftMostNode();
+
+    Tree<T> getRightMostNode();
+
 
 }
