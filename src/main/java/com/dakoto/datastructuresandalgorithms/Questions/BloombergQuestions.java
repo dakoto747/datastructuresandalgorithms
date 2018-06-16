@@ -6,6 +6,7 @@ import com.dakoto.datastructuresandalgorithms.datastructures.Stack;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
+import java.util.TreeMap;
 
 /**
  *  Sources:
@@ -90,10 +91,10 @@ public class BloombergQuestions {
             }
 
             if(stackA.getSize() != 0){
-                sum += stackA.pop().getValue();
+                sum += stackA.pop();
             }
             if(stackB.getSize() != 0){
-                sum += stackB.pop().getValue();
+                sum += stackB.pop();
             }
             if(sum > 9){
                 carry = true;
@@ -320,6 +321,11 @@ Assume that:
         return profit;
     }
 
+    public int[] lexicographicOrdering(int number ){
+
+        TreeMap<String, Integer> treemap = new TreeMap<>();
+        return null;
+    }
     public int[] maxSubArray(int[] original){
         /*
         Find the contiguous subarray within an array (containing at least one number) which has the largest sum.
@@ -336,7 +342,64 @@ Assume that:
 
     }
 
+    public void printAllRoutes(){
+        /*
 
+  A <----> C
+  A <----> D
+  B <----> C
+  B <----> D
+
+  // print_all_routes("C", "D")
+
+  C,A,B,D,
+  C,A,D,
+  C,B,A,D,
+  C,B,D,
+
+
+         */
+    }
+
+    public void widthOfTree(){
+        /*create a datastructure that accepts a pair of people: an employee and their superior,
+            and can print out the number of people on each level in the heirarchy
+         */
+    }
+
+    public void find2ndLargest(){
+        /*
+        find the second largest element in a binary tree. Assume it's not balanced or perfect.
+         */
+    }
+    public void minimalElement(){
+        /*
+
+        The technical question was to design a stack with O(1) lookup for minimum element in the stack.
+        They first make you optimize your design till they are satisfied and then you have to write code for push, pop.
+         */
+//        on each insert or pop operation, compute the minimal element;
+//        keep track using a binary tree or you can dump them in a queue, compare and then reinsert into another stack
+    }
+
+    public void addressBook(){
+        /*
+        Then I was asked to design an address book which you can use to: 
+        a) Get the the info of a person from the name 
+        b) Get the info of a person from a number 
+ 
+        Numbers are unique but names are not.
+         */
+
+
+
+
+
+
+
+//        (most optimal design: use hash tables with key as the the name or number and value as a pointer to the location of info with binary trees to handle collisions) 
+
+    }
     public int missingNumber(){
         /*
 
