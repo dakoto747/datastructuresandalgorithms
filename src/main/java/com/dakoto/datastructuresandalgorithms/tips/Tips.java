@@ -23,7 +23,7 @@ public class Tips {
 //    there are edge case questions, algorithms questions, data structures questions, data structures and algorithms
 
 
-//    arrays: play with runners, trackers, modulus, hashmaps, sequence math, indexes and loop invariants
+//    arrays: play with runners, trackers(boolean?), modulus, hashmaps, sequence math, indexes and loop invariants
 //    characters: xor
 //    digits: 10 and modulus, xor, bit manipulation,
 //    stacks: reverse, implement with linked lists(reset head), read from back to front,
@@ -60,7 +60,7 @@ public class Tips {
          *     think like homer simpsons/a simpsons writer: be resourceful; your brain is infinite; program it;
          *     watch cartoons (tom and jerry) and draw: activate right brain, mix left and right
          *  9. think! don't get hung on looking-for past solutions or shoe-horning past sols
-         * 10. most significant digit: (number-(number%10))/10
+         * 10. most significant digit: (number-(number%10))/10 || number - number/10
          * 11. the runner technique
          * 12. palindrome/rotation : even number, two lists, pivots.
          * 		Think about the specific properties of the problem: how to mathematically represent them ;
