@@ -1,7 +1,8 @@
 package com.dakoto.datastructuresandalgorithms.algorithms.search;
 
 public interface Search<T> {
-//DFS and BFS aren't only for graphs
+
+//DFS and BFS aren't only for graphs, you can use them on various data structures
 
     default boolean breadthFirstSearch(T searchKey){
 

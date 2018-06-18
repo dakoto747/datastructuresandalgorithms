@@ -1,7 +1,10 @@
-package com.dakoto.datastructuresandalgorithms.datastructures.Trees;
+package com.dakoto.datastructuresandalgorithms.datastructures.trees;
 
 import com.dakoto.datastructuresandalgorithms.datastructures.DataStructure;
 
+/*
+//use examples: bank employee heirarchy, prefix tree, etc.,
+ */
 public interface Tree<T> extends DataStructure {
 
     void levelOrderTraverse();

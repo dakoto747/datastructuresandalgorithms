@@ -1,5 +1,14 @@
-package com.dakoto.datastructuresandalgorithms.datastructures.Trees;
+package com.dakoto.datastructuresandalgorithms.datastructures.trees;
 
+/**
+ * uses:
+ *  think of this as a sorted list, that sorts on insert.
+ *  remember it's BINARY nature(2's) which may come useful in questions
+ *  you can't perform binary search on them if they aren't balanced
+ *
+ *
+ *
+ */
 public class BinarySearchTree<T extends Comparable> extends BinaryTree<T> {
 
     public BinarySearchTree(){}

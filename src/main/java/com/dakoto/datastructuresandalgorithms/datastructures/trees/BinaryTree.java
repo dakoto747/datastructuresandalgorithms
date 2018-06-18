@@ -1,8 +1,13 @@
-package com.dakoto.datastructuresandalgorithms.datastructures.Trees;
+package com.dakoto.datastructuresandalgorithms.datastructures.trees;
 
 import com.dakoto.datastructuresandalgorithms.algorithms.search.Search;
 import com.dakoto.datastructuresandalgorithms.datastructures.Queue;
 
+/**
+ *
+ *
+ *
+ */
 public class BinaryTree<T> implements Tree<T>, Search<T> {
 
     protected T value;
