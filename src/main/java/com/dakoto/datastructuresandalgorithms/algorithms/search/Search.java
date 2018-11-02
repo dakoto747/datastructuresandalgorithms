@@ -9,6 +9,11 @@ public interface Search<T> {
         return false;
     }
 
+    default boolean breadthFirstSearch(T root, T destination){
+
+        return false;
+    }
+
     default boolean depthFirstSearch(T searchKey){
         /*
         Note that pre-order and other forms of tree traversal are a form of DFS.
@@ -18,6 +23,11 @@ public interface Search<T> {
 
     The depth-first search will find all non-cyclical paths between two nodes
          */
+
+        return false;
+    }
+
+    default boolean depthFirstSearch(T root, T destination){
 
         return false;
     }

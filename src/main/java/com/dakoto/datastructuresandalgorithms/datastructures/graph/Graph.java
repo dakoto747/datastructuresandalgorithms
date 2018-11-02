@@ -1,4 +1,4 @@
-package com.dakoto.datastructuresandalgorithms.algorithms.graph;
+package com.dakoto.datastructuresandalgorithms.datastructures.graph;
 
 import com.dakoto.datastructuresandalgorithms.algorithms.search.ShortestPath;
 

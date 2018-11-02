@@ -59,7 +59,7 @@ public class Tips {
          *  8. leverage resources. think two scans = O(2N) think duplicates, think indexing, think two arrays around a pivot or modulus(partition or rotate) ;
          *     think like homer simpsons/a simpsons writer: be resourceful; your brain is infinite; program it;
          *     watch cartoons (tom and jerry) and draw: activate right brain, mix left and right
-         *  9. think! don't get hung on looking-for past solutions or shoe-horning past sols
+         *  9. think! don't try to remember past solutions! don't get hung on looking-for past solutions or shoe-horning past sols
          * 10. most significant digit: (number-(number%10))/10 || number - number/10
          * 11. the runner technique
          * 12. palindrome/rotation : even number, two lists, pivots.
