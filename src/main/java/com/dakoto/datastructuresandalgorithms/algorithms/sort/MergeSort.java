@@ -3,14 +3,15 @@ package com.dakoto.datastructuresandalgorithms.algorithms.sort;
 import java.util.List;
 import java.util.Map;
 
-import GenericAlgorithms.Algorithm;
+//import GenericAlgorithms.Algorithm;
 
 
- public class MergeSort implements Algorithm{
+ public class MergeSort // implements Algorithm
+ {
 
 	 
 		
-	@Override
+//	@Override
 	public String keywords() {
 		return "MERGE TWO (SORTED) FINGER(S) COMPARE FIRST ELEMENTS AND POP(CHOP TIP OF FINGERS[VISUAL]) INTO LARGE"+
 			   "main merge algorithm: 2 finger algorithm"+
@@ -84,67 +85,67 @@ import GenericAlgorithms.Algorithm;
 		}
 	}
 	
-	@Override
-	public modelOfComputation getModelOfComparison() {
-		return Algorithm.modelOfComputation.comparison_model;
-	}	 
-	@Override
-	public String intuition() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String associatedDataStructure() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public domain getDomain() {
-		return Algorithm.domain.divide_and_conquer;
-	}
-
-	@Override
-	public String proofOfCorrectness() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<String> exampleApplications() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Map<String, String> usefulDataStructuresForImpl() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getComplexity() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getReasonForComplexity() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<String> getOptimizations() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<String> getAlternatives() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public modelOfComputation getModelOfComparison() {
+//		return Algorithm.modelOfComputation.comparison_model;
+//	}
+//	@Override
+//	public String intuition() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public String associatedDataStructure() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public domain getDomain() {
+//		return Algorithm.domain.divide_and_conquer;
+//	}
+//
+//	@Override
+//	public String proofOfCorrectness() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public List<String> exampleApplications() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public Map<String, String> usefulDataStructuresForImpl() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public String getComplexity() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public String getReasonForComplexity() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public List<String> getOptimizations() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public List<String> getAlternatives() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 }

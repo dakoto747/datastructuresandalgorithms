@@ -63,7 +63,7 @@ public class BinarySearchTree<T extends Comparable> extends BinaryTree<T> {
         if (rightmost.leftChild != null) {
             return rightmost.leftChild.getRightMostElement();
         } else{
-                return rightmost.parent
+                return null;//rightmost.parent
             }
     }
 

@@ -73,6 +73,11 @@ public class SinglyLinkedList<T> implements DataStructure, List {
     }
 
     @Override
+    public boolean isEmpty() {
+        return false;
+    }
+
+    @Override
     public int getSize() {
         return this.size;
     }
