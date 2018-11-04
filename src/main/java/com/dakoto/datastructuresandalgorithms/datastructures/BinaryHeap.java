@@ -84,7 +84,7 @@ public class BinaryHeap<T extends Comparable> {
             c. swap yourself with your smaller child and update the index.
 
 
-         */
+         */    
         int elementIndex = 0;
 
         switch (type)
