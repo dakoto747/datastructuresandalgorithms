@@ -30,6 +30,25 @@ subtree differ by no more than one. This prevents situations where the tree gets
     CONSISTENCY: https://youtu.be/jDM6_TnYIqE?t=1610
 
     when we LEFT ROTATE, we reinsert the RIGHT CHILD of the new root; that's all we have to worry about for consistency; https://youtu.be/jDM6_TnYIqE?t=1610
+          C: newRight(current Root)
+           /                      \
+     A: newRoot(current left)    D: new Rights right Child
+         /                \
+ B: newLeft            E: new right's Left Child E
+ (current left's Child)
+
+      we want
+
+       A
+      / \
+    B    C
+        / \
+       E   D
+
+    watch video for more clarification
+
+
+
     when we RIGHT ROTATE, we reinsert the LEFT CHILD of the new root
 
      */

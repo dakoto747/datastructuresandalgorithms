@@ -28,7 +28,7 @@ to indicate that the input object
  *
  * therefore output -1 means foreign object is less than
  *           output 0 means foreign object is equal
- *           output -1 means foreign object is greater than
+ *           output 1 means foreign object is greater than
  * compareTo basically asks the question, is foreigner greater than or equal to local? if yes, return a positive value
  */
         return 0;
