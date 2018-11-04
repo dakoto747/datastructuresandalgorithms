@@ -90,15 +90,7 @@ public class BinaryHeap<T extends Comparable> {
         switch (type)
         {
             case MAX:
-
-                while(hasParent(elementIndex) && (
-                        elements.get(elementIndex).compareTo(
-                                getParentOfElement(elementIndex)
-                        ) == 1))
-                {
-                    swap(elementIndex, getParentIndexOfElement(elementIndex));
-                    elementIndex = getParentIndexOfElement(elementIndex);
-                }
+                
 
                 break;
 
