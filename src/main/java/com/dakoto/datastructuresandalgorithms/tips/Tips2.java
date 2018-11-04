@@ -95,6 +95,13 @@ public class Tips2 {
      *
      * uses of graphs:
      *
+     *
+     * most data structures are dynamic programming tasks
+     * - merge-sort: dynamic programming
+     * - tree traversal (apart from level order traverse): dynamic programming
+     * - insertion, etc.
+     * - break down implementations into smaller problems
+     *
 
      */
 }

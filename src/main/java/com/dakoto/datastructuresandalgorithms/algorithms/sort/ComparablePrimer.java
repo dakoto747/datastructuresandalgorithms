@@ -15,6 +15,9 @@ to indicate that the input object
     @Override
     public int compareTo(Object foreigner) {
 /**
+ *
+ *  in short it asks : is the foreigner greater than me ?
+ *
  * if incoming object: foreigner is less than this class's instance, return -1
  * if incoming object: foreigner is equal to this class's instance, return 0
  * if incoming object: foreigner is greater than this class's instance, return 1

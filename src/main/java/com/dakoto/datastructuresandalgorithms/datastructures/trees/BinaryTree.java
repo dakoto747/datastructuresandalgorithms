@@ -8,7 +8,7 @@ import com.dakoto.datastructuresandalgorithms.datastructures.Queue;
  *
  *
  */
-public class BinaryTree<T> implements Tree<T>, Search<T> {
+public class BinaryTree<T> implements Tree<T>, Search<T>, Cloneable{
 
     protected T value;
 
@@ -21,6 +21,18 @@ public class BinaryTree<T> implements Tree<T>, Search<T> {
     public BinaryTree(T rootValue){
 
         this.value = rootValue;
+    }
+
+    protected BinaryTree(BinaryTree<T> another)
+    {
+        value = another.getValue();
+        leftChild = another.getLeftChild();
+        rightChild = another.getRightChild();
+    }
+
+    public Object clone()
+    {
+        return new BinaryTree<>(this);
     }
 
     public T getValue() {
@@ -49,6 +61,8 @@ public class BinaryTree<T> implements Tree<T>, Search<T> {
 
     @Override
     public void levelOrderTraverse() {
+
+        //this is breadth-first search
 
         Queue<BinaryTree<T>> nodes = new Queue<BinaryTree<T>>();
         nodes.enqueue(this);
