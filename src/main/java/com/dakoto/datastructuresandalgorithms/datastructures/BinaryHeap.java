@@ -90,7 +90,7 @@ public class BinaryHeap<T extends Comparable> {
         switch (type)
         {
             case MAX:
-                
+
 
                 break;
 
