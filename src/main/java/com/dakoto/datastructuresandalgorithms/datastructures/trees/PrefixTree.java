@@ -86,6 +86,6 @@ that it knows about. Side benefit: fast and space-efficient string searching.
     {
         //this is in order to illustrate optimized look ups
 
-        
+
     }
 }

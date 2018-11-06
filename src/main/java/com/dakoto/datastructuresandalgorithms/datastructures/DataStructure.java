@@ -12,4 +12,20 @@ public interface DataStructure {
 
     int getSize();
 
+    default String printBestCaseRuntimeForOperations()
+    {
+        return "Big Omega / lowerbound";
+    }
+
+    default String printWorstCaseRuntimeForOperations()
+    {
+        return "Big O / Upperbound";
+    }
+
+    default String printAverageRuntimeForOperations()
+    {
+        return "Big Theta / Big O plus Big Theta";
+    }
+
+
 }
