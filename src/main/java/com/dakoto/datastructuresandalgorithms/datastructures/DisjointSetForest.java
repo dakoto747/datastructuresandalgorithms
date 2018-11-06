@@ -265,4 +265,14 @@ A.K.A Union Find.
 
 
     }
+
+    public static void main(String args[])
+    {
+        //questions to illustrate use; like the baby names question
+
+        DisjointSetForest names = new DisjointSetForest();
+
+
+
+    }
 }
