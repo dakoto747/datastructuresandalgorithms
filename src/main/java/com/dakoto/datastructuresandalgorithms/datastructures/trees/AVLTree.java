@@ -54,6 +54,10 @@ subtree differ by no more than one. This prevents situations where the tree gets
      */
 
     // rotation is always only done on 3 nodes
+    // left rotation works because the parent is always greater than the new root
+    // and the new root's right child is always less than the parent, but greater than the new root,
+    // that's why it can go to the new right side, but has to be in the left side.
+
     public void leftRotate()
     {
         //new root is the left child.

@@ -12,12 +12,58 @@ BST data structure with extra color field for each node satisfying Red Black pro
 
 uses less memory than most other balancing trees, can rebalance faster and thus, are more desirable when trees are modified frequently.
 downside: they do not ensure quite as strict balancing, but balancing is still good enough to ensure o(logN) operations
+
+
+Black Height
+We call the number of black nodes on any path from, but not including a node x down to a leaf the black-height of a node,
+denoted bh(x).
  */
 
     //satisfying the first property;
     public static enum RedBlackNodeColor{RED, BLACK};
 
+    public static enum RedBlackTreeImbalanceAxis{LEFT_LEFT, LEFT_RIGHT, RIGHT_LEFT, RIGHT_RIGHT}
+
     private RedBlackNodeColor nodeColor;
+
+    private RedBlackTree parent;
+
+    public static RedBlackTree sentinel = new RedBlackTree(RedBlackNodeColor.BLACK);
+
+    public RedBlackTree(T value)
+    {
+        super(value);
+        setLeftChild(sentinel);
+        setRightChild(sentinel);
+        setNodeColor(RedBlackNodeColor.RED);
+    }
+
+    public RedBlackTree(T value, RedBlackTree parent)
+    {
+        this(value);
+        this.parent = parent;
+    }
+
+    public RedBlackTree(RedBlackNodeColor color)
+    {
+        this.nodeColor = color;
+    }
+
+    public static RedBlackTree getSentinel()
+    {
+    /*
+        For a red-black tree T , the sentinel T: nil is an object with the same attributes as an ordinary node in the
+        tree. Its color attribute is BLACK, and its other attributes—p, left, right, and key—can take on arbitrary values.
+        As Figure 13.1(b) shows, all pointers to NIL are replaced by pointers to the sentinel T:nil.
+        We use the sentinel so that we can treat a NIL child of a node x as an ordinary node whose parent is x.
+        Although we instead could add a distinct sentinel node for each NIL in the tree,
+        so that the parent of each NIL is well defined, that ap- proach would waste space.
+        Instead, we use the one sentinel T:nil to represent all the NILs—all leaves and the root’s parent.
+        The values of the attributes p, left, right, and key of the sentinel are immaterial, although we may set them
+        during the course of a procedure for our convenience.
+    */
+        return sentinel;
+    }
 
 
     public RedBlackNodeColor getNodeColor(){
@@ -28,10 +74,8 @@ downside: they do not ensure quite as strict balancing, but balancing is still g
         this.nodeColor = nodeColor;
     }
 
-
-
     @Override
-    public void insert(T node)
+    public void insert(T newElement)
     {
         /*
         In AVL tree insertion, we used rotation as a tool to do balancing after insertion caused imbalance. In Red-Black tree, we use two tools to do balancing.
@@ -65,7 +109,86 @@ downside: they do not ensure quite as strict balancing, but balancing is still g
 
          */
 
+        //if node > this
+        if(((T)getValue()).compareTo(newElement) == 1)
+        {
+            if(getLeftChild() == sentinel)
+            {
+                RedBlackTree newChild = new RedBlackTree(newElement, this);// which is definitely Red
+                if(getNodeColor() == RedBlackNodeColor.RED)
+                {
+                    if(isRoot())
+                    {
+                        setNodeColor(RedBlackNodeColor.BLACK);
+                        return;
+                    }
+                    else if(newChild.getUncle().getNodeColor() == RedBlackNodeColor.RED)
+                    {
+                        fixRedUncle(newChild);
+                        return;
+                    }
+
+                }
+                else
+                {
+
+                }
+            }
+        }
 
     }
+
+    public void fixRedUncle(RedBlackTree node)
+    {
+        if(node.isRoot())
+        {
+            node.setNodeColor(RedBlackNodeColor.BLACK);
+            return;
+        }
+
+        while(node.getParent() != sentinel && node.isInViolation()){
+            node.getParent().setNodeColor(RedBlackNodeColor.BLACK);
+            node.getUncle().setNodeColor(RedBlackNodeColor.BLACK);
+            if(node.getParent().getParent() != sentinel)
+            {
+                node.getParent().getParent().setNodeColor(RedBlackNodeColor.RED);
+                fixRedUncle(node.getParent().getParent());
+            }
+        }
+    }
+
+
+    private RedBlackTree getUncle()
+    {
+        //parent value > than my value
+        if(((T)getParent().getValue()).compareTo(getValue()) == -1)
+        {
+            return (RedBlackTree) getParent().getRightChild();
+        }
+        else
+        {
+            return (RedBlackTree) getParent().getLeftChild();
+        }
+    }
+
+    private boolean isInViolation()
+    {
+        return getNodeColor() == RedBlackNodeColor.RED &&
+               getParent().getNodeColor() == RedBlackNodeColor.RED;
+    }
+
+    private boolean isRoot()
+    {
+        return getParent() == sentinel;
+    }
+
+    public RedBlackTree getParent() {
+        return parent;
+    }
+
+    public void setParent(RedBlackTree parent) {
+        this.parent = parent;
+    }
+
 
 }
