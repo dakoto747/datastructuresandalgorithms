@@ -114,29 +114,99 @@ denoted bh(x).
         {
             if(getLeftChild() == sentinel)
             {
-                RedBlackTree newChild = new RedBlackTree(newElement, this);// which is definitely Red
-                if(getNodeColor() == RedBlackNodeColor.RED)
+                RedBlackTree newChild = new RedBlackTree(newElement, this);
+
+                if(newChild.isInViolation())
                 {
                     if(isRoot())
                     {
                         setNodeColor(RedBlackNodeColor.BLACK);
                         return;
                     }
-                    else if(newChild.getUncle().getNodeColor() == RedBlackNodeColor.RED)
+                    if(getUncle().getNodeColor() == RedBlackNodeColor.RED) fixRedUncle(newChild);
+                    else
                     {
-                        fixRedUncle(newChild);
-                        return;
+                        switch (getImbalanceType())
+                        {
+                            case LEFT_LEFT:
+
+                                getParent().leftRotate();
+                                return;
+
+                            case LEFT_RIGHT:
+
+                                rightRotate();
+                                getParent().getParent().leftRotate();
+                                return;
+
+                            case RIGHT_LEFT:
+
+                                leftRotate();
+                                getParent().getParent().rightRotate();
+                                return;
+
+                            case RIGHT_RIGHT:
+
+                                rightRotate();
+                                return;
+                        }
                     }
 
-                }
-                else
-                {
-
+                    getParent().getParent().leftRotate();
+                    return;
                 }
             }
+            else
+            {
+                getLeftChild().insert(newElement);
+            }
         }
+        else
+        {
+
+        }
+    }
+
+
+    public void leftRotate()
+    {
+        if(this == sentinel) return;
+
+        RedBlackTree newTruncatedRight = new RedBlackTree(getValue(), (RedBlackTree) getRightChild());
+        newTruncatedRight.setRightChild(getRightChild());
+        newTruncatedRight.setLeftChild(getLeftChild().getRightChild());
+        setValue(getLeftChild().getValue());
+        setRightChild(getLeftChild().getLeftChild());
+        setLeftChild(newTruncatedRight);
+
+        //set new root to black and its children to black
+
+        setNodeColor(RedBlackNodeColor.BLACK);
+        if(getLeftChild() != sentinel) ((RedBlackTree)getLeftChild()).setNodeColor(RedBlackNodeColor.RED);
+
+        ((RedBlackTree)getRightChild()).setNodeColor(RedBlackNodeColor.RED);
+    }
+
+    public void rightRotate()
+    {
+        if(this == sentinel) return;
+
+        RedBlackTree newTruncatedLeft = new RedBlackTree(getValue(), (RedBlackTree) getLeftChild());
+        newTruncatedLeft.setLeftChild(getLeftChild());
+        newTruncatedLeft.setRightChild(getRightChild().getLeftChild());
+        setValue(getRightChild().getValue());
+        setLeftChild(newTruncatedLeft);
+        setRightChild(getRightChild().getRightChild());
+
+
+        //set new root to black and its children to black
+
+        if(getRightChild() != sentinel) ((RedBlackTree)getRightChild()).setNodeColor(RedBlackNodeColor.RED);
+
+        ((RedBlackTree)getLeftChild()).setNodeColor(RedBlackNodeColor.RED);
 
     }
+
 
     public void fixRedUncle(RedBlackTree node)
     {
@@ -170,6 +240,32 @@ denoted bh(x).
             return (RedBlackTree) getParent().getLeftChild();
         }
     }
+
+    private RedBlackTreeImbalanceAxis getImbalanceType()
+    {
+        if(isGreaterThanParent())
+        {
+            if(getParent().isGreaterThanParent()) return RedBlackTreeImbalanceAxis.RIGHT_RIGHT;
+            else return RedBlackTreeImbalanceAxis.LEFT_RIGHT;
+        }
+        else
+        {
+            if(getParent().isGreaterThanParent()) return RedBlackTreeImbalanceAxis.RIGHT_LEFT;
+            else return RedBlackTreeImbalanceAxis.LEFT_LEFT;
+        }
+    }
+
+    private boolean isGreaterThanParent()
+    {
+        //isRightChildOfParent
+        if(getParent() != sentinel)
+        {
+            return getValue().compareTo(getParent().getValue()) == -1;
+        }
+
+        return false;
+    }
+
 
     private boolean isInViolation()
     {
