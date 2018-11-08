@@ -1,0 +1,129 @@
+Interview Callbacks
+https://techiedelight.quora.com/
+
+NUMBER THEORY 
+https://www.quora.com/What-important-topics-of-number-theory-should-every-programmer-know 
+
+interview must knows 
+http://stackoverflow.com/a/15655032/1925094 
+
+You are always allowed to initialize a final variable. The compiler makes sure that you can do it only once.
+
+Note that calling methods on an object stored in a final variable has nothing to do with the semantics of final. In other words: final is only about the reference itself, and not about the contents of the referenced object.
+
+Java has no concept of object immutability; this is achieved by carefully designing the object, and is a far-from-trivial endeavor.
+
+
+IoC 
+Inversion of Control || Hollywood principle - Don't call me, we will call you"
+Interfaces and callbacks 
+http://cleancodedevelopment-qualityseal.blogspot.co.uk/2012/10/understanding-callbacks-with-java.html 
+
+
+Codility Notes 
+https://techiedelight.quora.com/
+https://www.reddit.com/r/programming/comments/5mh4x6/huge_collection_of_coding_interview_questions/
+https://techiedelight.quora.com/350%2B-Data-structures-programming-interview-questions?srid=hOqIb
+https://www.reddit.com/r/cscareerquestions/ 
+https://www.reddit.com/r/CS_Questions/
+https://www.reddit.com/r/cscareerquestions/comments/20ahfq/heres_a_pretty_big_list_of_programming_interview/
+
+xor swap 
+https://betterexplained.com/articles/swap-two-variables-using-xor/ 
+
+
+https://betterexplained.com/articles/sorting-algorithms/ 
+
+http://stackoverflow.com/a/31422066/1925094 
+int[] array = {3, 2, 5, 4};
+
+if (Arrays.stream(array).anyMatch(x -> x == 3)) {
+    System.out.println("The array contains 3");
+}
+Integer[] what = Arrays.stream( p ).boxed().toArray( Integer[]::new );
+
+
+100% on first 
+50% at least on second 
+permutations and combinations 
+
+
+simplify swap operations 
+simplify permutation and combination operations 
+break into smaller problems ? 
+
+duplicated work - look out for 
+
+orthogonal array testing 
+https://www.linkedin.com/pulse/advance-test-techniques-orthogonal-array-testing-strategy-rahul-kumar
+http://www.softwaretestinghelp.com/combinational-test-technique/ 
+ 
+xor (number swapping) 
+log - to detect if something is the power of something; 
+when it comes to exponents, think log
+% (modulus)
+if statement?assign true variable: assign false variable; (if statement)
+boolean statements within for-loops 
+ceil/floor -absolute
+breaking loops 
+index manipulation  (in arrays)
+regexes/bitwise-operations and tricks
+permutation and combination hacks 
+recursion is work string methods like contains or split("")
+collections sort/ reverse 
+binary search 
+recursion is bad (although top-bottom is the best way to think about it) and iterative implementation of recursion is better
+sum of numbers :  n(n+1)/2
+log cheats (log8 base 2 = 3) tree levels? 
+sometimes a new data structure to store makes life easier 
+sometimes hash map as a lookup (storing counts etc, makes life easier)
+sorting, searching
+sorting makes life easier; quick sort is good
+binary search is good
+use all information
+sometimes, duplication for comparison helps
+number comparison: xor, % modulus (repeating elements)
+hash maps are good for memory/lookups
+Stress automation 
+NUMBER THEORY 
+orthogonal array testing https://www.linkedin.com/pulse/advance-test-techniques-orthogonal-array-testing-strategy-rahul-kumar 
+
+out of bounds exception
+
+
+empty array
+
+one element, 0 <= K <= 5
+
+small functional tests, K >= N
+
+maximal N and K (number of elements)
+
+always negative numbers, -1, 0,1, double many test cases (elements and array size)
+
+
+make sure that the element you're returning is updated before return; and updated regularly at action performed
+also make sure you don't overlook > or >= and vice versa for correctness and test cases 
+			
+correctness tests
+
+topi
+http://www.geeksforgeeks.org/find-the-two-numbers-with-odd-occurences-in-an-unsorted-array/
+
+http://www.ardendertat.com/2011/09/27/programming-interview-questions-4-find-missing-element/
+http://disq.us/p/1dvi3s4 
+http://stackoverflow.com/questions/1085709/what-does-synchronized-mean
+http://www.ardendertat.com/2011/12/13/programming-interview-questions-22-find-odd-occurring-element/
+http://stackoverflow.com/questions/40471/differences-between-hashmap-and-hashtable
+http://docs.oracle.com/javase/tutorial/java/nutsandbolts/op3.html
+http://stackoverflow.com/a/2672217/1925094 
+
+
+https://graphics.stanford.edu/~seander/bithacks.html 
+http://stackoverflow.com/a/16175931/1925094 
+http://www.catonmat.net/blog/low-level-bit-hacks-you-absolutely-must-know/ 
+https://www.quora.com/What-are-some-cool-bit-manipulation-tricks-hacks 
+
+
+
+

@@ -1,0 +1,46 @@
+Data Structure CheatSheet 
+There are linear(arrays, lists and maps) and non-linear datastructures(trees, graphs, tries and heaps) 
+When creating a program, you have to think about the right datastructure to use 
+When writing a program, one of the first steps is determining or choosing the data structures.  
+What are the "right" data structures for the program? 
+The interface of operations supported by a data structure is one factor to consider when choosing between several available data structures. 
+Another important factor is the efficiency of the data structure: how much space does the data structure occupy,
+and what are the running times of the operations in its interface?  
+
+http://stackoverflow.com/questions/1539069/practical-uses-of-different-data-structures 
+http://www.idevelopment.info/data/Programming/data_structures/overview/Data_Structures_Algorithms_Introduction.shtml 
+
+https://www.youtube.com/watch?v=92S4zgXN17o&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=2
+
+Hash Table - used for fast data lookup - symbol table for compilers, database indexing, caches,Unique data representation.
+
+Trie - dictionary, such as one found on a mobile telephone for autocompletion and spell-checking.
+
+Suffix tree - fast full text searches used in most word processors.
+
+Stack - undo\redo operation in word processors, Expression evaluation and syntax parsing, many virtual machines like JVM are stack oriented.
+
+Queues - Transport and operations research where various entities are stored and held to be processed later ie the queue performs the function of a buffer.
+
+Priority queues - process scheduling in the kernel
+
+Trees - Parsers, Filesystem
+
+Radix tree - IP routing table
+
+BSP tree - 3D computer graphics
+
+Graphs - Connections/relations in social networking sites, Routing ,networks of communication, data organization etc.
+
+Heap - Dynamic memory allocation in lisp
+
+Maps - key value pairs ; e.g arrays(key = idx, value = element), hash table (hashcode, linked list)
+
+tries(Dictionary/English Dictionary) - keys are guaranteed to unique(no collisions).  combine structures and pointers to store data. the data is roadmap for navigation. Used store Dictionaries. If you find the key in the dictionary (i.e you don't hit a null pointer)
+
+Heap - parent keys are always bigger than their children 
+
+week 7 section playlist CS50 on youtube. 
+File Pointers - 
+
+Graphs - Think hamiltonian path, travelling salesman problem, social network and robot arm

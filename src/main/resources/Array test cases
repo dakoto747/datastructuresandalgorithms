@@ -1,0 +1,21 @@
+Array test cases
+
+[-1000, 1000] //opposites
+[-10, -5, -3, -4, -5]
+[3,1,2,5]//missing in a sequence
+[] //empty
+[1]
+[-1]
+[0]
+[10, -5, -3, 4, 5] //negative less than positive
+[-10, -5, 3, 4, 5] //positive less than negative
+[-10, -5, 3, 4, 5, 2] //positive equal to negative 
+[3,1,2,3] //double elements 
+[1,1] //double elements 
+[0,0] //double elements lookout for distinct elements spec
+/* combinations of 2 (also try combinations of 3) */
+[-1, -1]
+[0, -1]
+[0, 1]
+[1, 0]
+[-1, 0]

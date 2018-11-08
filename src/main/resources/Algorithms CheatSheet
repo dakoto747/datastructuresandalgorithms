@@ -1,0 +1,7 @@
+Algorithm(s) Cheat Sheet
+QuickSort - Pivot; put elements greater than pivot in LHS and elements less than pivot in RHS. 
+[recursion]
+
+MergeSort - sort smaller arrays, then combine them together; find middle, sort left hand side and then sort right hand side.
+[recursion]
+ 

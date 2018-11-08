@@ -1,0 +1,24 @@
+extreme_empty 
+empty array ✔OK
+▶ single 
+one element, 0 <= K <= 5 ✘RUNTIME ERROR 
+tested program terminated unexpectedly
+▶ double 
+two elements, K <= N ✘WRONG ANSWER 
+got [5, -1000] expected [-1000, 5]
+▶ small1 
+small functional tests, K < N ✘WRONG ANSWER 
+got [2, 3, 4, 5, 6, 7, 1] expected [6, 7, 1, 2, 3, 4, 5]
+▶ small2 
+small functional tests, K >= N ✘WRONG ANSWER 
+got [7, 1, 2, 3, 4, 5, 6] expected [1, 2, 3, 4, 5, 6, 7]
+▶ small_random_all_rotations 
+small random sequence, all rotations, N = 15 ✘RUNTIME ERROR 
+tested program terminated unexpectedly
+▶ medium_random 
+medium random sequence, N = 100 ✘WRONG ANSWER 
+got [-450, -554, 473, 354.. expected [58, 943, 722, 279, -..
+▶ maximal 
+maximal N and K ✘WRONG ANSWER 
+got [155, 710, 807, 568, .. expected [710, 807, 568, 560, ..
+Training center

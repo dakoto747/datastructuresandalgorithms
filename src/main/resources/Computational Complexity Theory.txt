@@ -1,0 +1,13 @@
+Computational Complexity 
+https://youtu.be/eHZifpgyH_4   -- Latest MIT information
+https://www.youtube.com/watch?v=mr1FMrwi6Ew 
+https://www.youtube.com/watch?v=IM9sHGlYV5A 
+https://www.youtube.com/watch?v=moPtwq_cVH8 
+https://www.youtube.com/watch?v=CjUxFCspqdI
+
+P = {problems that can be solved in polynomial time}
+Polynomial time = this time is a simple polynomial function of the size of the input.
+
+A polynomial function is a function such as a quadratic, a cubic, a quartic, and so on,
+ involving only non-negative integer powers of x. !!!!!!!!!!!!!!!!!!!! 
+ We can give a general defintion of a polynomial, and define its degree.
