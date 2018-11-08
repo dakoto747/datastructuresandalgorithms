@@ -181,7 +181,6 @@ public class Tips {
          * pale, bake -> false
          */
 
-//		answer: dp?
     }
 
     public void stringCompression(){

@@ -91,7 +91,9 @@ public class Tips2 {
      *  4. dfs
      *  5. bfs
      *
-     * Note that pre-order and other forms of tree traversal are a form of DFS. The key difference is that when implementing this algorithm for a graph, we must check if the node has been visited. If we don't, we risk getting stuck in an infinite loop.
+     * Note that pre-order and other forms of tree traversal are a form of DFS.
+     * The key difference is that when implementing this algorithm for a graph, we must check if the node has been visited.
+     * If we don't, we risk getting stuck in an infinite loop.
      *
      * uses of graphs:
      *
@@ -101,6 +103,14 @@ public class Tips2 {
      * - tree traversal (apart from level order traverse): dynamic programming
      * - insertion, etc.
      * - break down implementations into smaller problems
+     *
+     *
+     * if the the problem is too large, break it down into sub problems instead of using multiple if-elses
+     *
+     *
+     * what are heaps used for?
+     *
+     *
      *
 
      */
