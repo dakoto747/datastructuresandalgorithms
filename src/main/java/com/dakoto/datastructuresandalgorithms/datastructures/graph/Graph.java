@@ -1,6 +1,7 @@
 package com.dakoto.datastructuresandalgorithms.datastructures.graph;
 
 import com.dakoto.datastructuresandalgorithms.algorithms.search.ShortestPath;
+import com.dakoto.datastructuresandalgorithms.datastructures.DataStructure;
 
 
 /**
@@ -25,7 +26,7 @@ import com.dakoto.datastructuresandalgorithms.algorithms.search.ShortestPath;
  //always use examples! application based learning
 
  */
-public interface Graph<T> extends ShortestPath<T>{
+public interface Graph<T> extends DataStructure<T> {
 
 
     default void printAllNodeConnections(T sourceNode, T destinationNode){
@@ -36,5 +37,14 @@ public interface Graph<T> extends ShortestPath<T>{
 
         return false;
     }
+
+    void dijkstraSearch(T sourceNode, T destinationNode);
+
+    void bellmanFordSearch(T sourceNode, T destinationNode);
+
+    void aStar(T sourceNode, T destinationNode);
+
+    boolean isAcyclic();
+
 
 }

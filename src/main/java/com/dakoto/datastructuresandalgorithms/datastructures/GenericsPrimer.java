@@ -7,10 +7,10 @@ public class GenericsPrimer {
 
     public class Foo<T> {
         private T t;
-        public void setValue(T t) {
+        public void setWeight(T t) {
             this.t = t;
         }
-        public T getValue() {
+        public T getWeight() {
             return t;
         }
     }
@@ -18,10 +18,10 @@ public class GenericsPrimer {
 
     public class Foo<T extends Bar> {
         private T t;
-        public void setValue(T t) {
+        public void setWeight(T t) {
             this.t = t;
         }
-        public T getValue() {
+        public T getWeight() {
             return t;
         }
     }

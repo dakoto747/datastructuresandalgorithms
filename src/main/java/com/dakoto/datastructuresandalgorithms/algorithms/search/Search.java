@@ -1,5 +1,7 @@
 package com.dakoto.datastructuresandalgorithms.algorithms.search;
 
+import java.util.List;
+
 public interface Search<T> {
 
 //DFS and BFS aren't only for graphs, you can use them on various data structures
@@ -33,6 +35,11 @@ public interface Search<T> {
     }
 
     default boolean search(T searchKey){
+
+        return false;
+    }
+
+    default boolean binarySearch(List<T> key){
 
         return false;
     }

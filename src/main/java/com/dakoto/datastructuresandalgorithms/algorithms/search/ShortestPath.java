@@ -1,14 +1,16 @@
 package com.dakoto.datastructuresandalgorithms.algorithms.search;
 
-public interface ShortestPath<T> {
+import com.dakoto.datastructuresandalgorithms.datastructures.graph.Graph;
 
-    default String findShortestPathInAcyclicGraph(){
+public interface ShortestPath<T> extends Graph<T> {
 
-        return null;
+    default void findShortestPathInAcyclicGraph(T source, T destination)
+    {
+        dijkstraSearch(source, destination);
     }
 
-    default String findShortestPathInCyclicGraph(){
-
-        return null;
+    default void findShortestPathInCyclicGraph(T source, T destination)
+    {
+        bellmanFordSearch(source, destination);
     }
 }

@@ -1,6 +1,8 @@
 package com.dakoto.datastructuresandalgorithms.datastructures.graph;
 
 import com.dakoto.datastructuresandalgorithms.algorithms.search.Search;
+import com.dakoto.datastructuresandalgorithms.algorithms.search.ShortestPath;
+import com.dakoto.datastructuresandalgorithms.algorithms.sort.Sort;
 import com.dakoto.datastructuresandalgorithms.datastructures.*;
 import com.dakoto.datastructuresandalgorithms.datastructures.Queue;
 
@@ -28,7 +30,7 @@ import java.util.*;
     //always use examples! application based learning
 
  */
-public class AdjacencyList<T> implements Graph<T>, Search<T> {
+public class AdjacencyList<T> implements ShortestPath<T>, Search<T>, Sort {
 
 
     private HashMap<GraphNode<T>, Set<GraphNode<T>>> adjancencyList = new HashMap<>();

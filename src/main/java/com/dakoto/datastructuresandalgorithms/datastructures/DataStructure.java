@@ -1,6 +1,8 @@
 package com.dakoto.datastructuresandalgorithms.datastructures;
 
-public interface DataStructure {
+import java.util.List;
+
+public interface DataStructure<T> {
 
     void test();
 
@@ -27,5 +29,5 @@ public interface DataStructure {
         return "Big Theta / Big O plus Big Theta";
     }
 
-
+    List<T> toList();
 }

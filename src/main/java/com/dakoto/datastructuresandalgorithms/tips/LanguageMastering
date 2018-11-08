@@ -5,7 +5,7 @@
      *  4. understand primitives (int, char, bool, object, prototypes, etc
      *  5. understand Collections: arrays, lists, hashmaps, tuples, vectors,
      *  6. understand oop, methods, polymorphism, etc
-     *  7. understand references (pass by value, etc)
+     *  7. understand references (pass by weight, etc)
      *  8. understand pointers
      *  9. understand garbage collection
      * 10. understand packages, libraries, headers, etc.
