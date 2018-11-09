@@ -207,7 +207,7 @@ public class ArrayAndStringQuestions
     public void magicIndex()
     {
         /*
-         * Magic Index: A magic index in an array A [e ... n -1] is defined to be an index such that
+         * Magic Index: A magic index in an array A [1 ... n -1] is defined to be an index such that
          * A[ i] = i.
          * Given a sorted array of distinct integers, write a method to find a magic index, if one exists, in array A.
          *
@@ -245,6 +245,8 @@ public class ArrayAndStringQuestions
          * EXAMPLE
          * Input 2 ,-8, 3, -2, 4, -10
          * Output 5 (i.e., {3, -2, 4})
+         *
+         * 2 ,-8, 3, -5, 8, 3, -2, 4, 7 -10, 2
          *
          */
     }
