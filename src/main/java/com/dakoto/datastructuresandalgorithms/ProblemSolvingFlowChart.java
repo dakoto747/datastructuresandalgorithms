@@ -9,7 +9,8 @@ public class ProblemSolvingFlowChart
         System.out.println();
         System.out.println("\tSTEP-1: LISTEN!!!!!!!!");
         System.out.println("Pay very close attention to any information in the problem description.\n" +
-                           "You probably need it all for an optimal algorithm.");
+                           "You probably need it all for an optimal algorithm. \n" +
+                           "Dakoto: also ask questions about the problem");
         System.out.println();
     }
 
