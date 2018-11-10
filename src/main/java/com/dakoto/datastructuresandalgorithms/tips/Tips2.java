@@ -110,7 +110,8 @@ public class Tips2 {
      *
      * what are heaps used for?
      *
-     * can you break the problem into classes and methods that make it easier on you ?
+     * can you break the problem into classes and methods that make it easier on you ? like in Langton's Ant
+     *
      * do the housekeeping in place. stop skipping the house keeping. the tracker variables, etc like total in mergesort
      *
      *
