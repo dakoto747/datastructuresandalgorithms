@@ -6,7 +6,7 @@ import java.util.Map;
 //import GenericAlgorithms.Algorithm;
 
 
- public class MergeSort // implements Algorithm
+ public class OldMergeSort // implements Algorithm
  {
 
 	 

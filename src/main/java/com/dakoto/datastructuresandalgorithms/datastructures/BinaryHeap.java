@@ -6,6 +6,23 @@ import java.util.List;
 public class BinaryHeap<T extends Comparable> {
 
     /*
+
+
+    Heap Data Structure is generally taught with Heapsort. Heapsort algorithm has limited uses because Quicksort is
+    better in practice. Nevertheless, the Heap data structure itself is enormously used.
+    Following are some uses other than Heapsort.
+
+    Priority Queues: Priority queues can be efficiently implemented using Binary Heap because it supports insert(),
+                     delete() and extractmax(), decreaseKey() operations in O(logn) time.
+                     Binomoial Heap and Fibonacci Heap are variations of Binary Heap.
+                     These variations perform union also in O(logn) time which is a O(n) operation in Binary Heap.
+                     Heap Implemented priority queues are used in Graph algorithms
+                     like Prim’s Algorithm and Dijkstra’s algorithm.
+
+    Order statistics: The Heap data structure can be used to efficiently find the kth smallest (or largest) element in
+                      an array. See method 4 and 6 of https://www.geeksforgeeks.org/k-largestor-smallest-elements-in-an-array/
+                      for details.
+
     https://www.youtube.com/watch?v=t0Cq6tVNRBA
 
 
