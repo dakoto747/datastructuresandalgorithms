@@ -214,5 +214,18 @@ public class BitManipulation
          */
     }
 
+    public void shiftBy31(int num)
+    {
+        /*
+         * because integers represent numbers in 32 bits
+         *
+         * shifting by 31 pushes the first value to the end
+         *  good for detecting negative numbers
+         *
+         *
+         *
+         */
+    }
+
 
 }

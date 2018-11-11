@@ -28,4 +28,9 @@ public class Combinatorics {
         return factorial(n)/(factorial(r) * factorial(n-r));
     }
 
+    public int sumOfNumbers0ToN(int n)
+    {
+        return (n*(n+1))/2;
+    }
+
 }

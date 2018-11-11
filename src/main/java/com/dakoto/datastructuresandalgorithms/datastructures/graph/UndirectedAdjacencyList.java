@@ -23,7 +23,7 @@ import java.util.*;
  *  checking mathematical conjectures(graph of every possible input to a theorem)
  *  Solving puzzles and games(rubik's cube)
  *
-
+11, 15
 
     // routes, friends, etc on linkedIn
     //always use examples! application based learning
@@ -156,6 +156,37 @@ public class UndirectedAdjacencyList<T> implements ShortestPath<T>, Search<T>, S
 
     }
 
+
+    public void printAllRoutesBFSHelper(T root, T destination, HashSet<T> visited,  StringBuilder currentRoute)
+    {
+        Queue<T> nodes = new Queue<>();
+        nodes.enqueue(root);
+
+
+        while(!nodes.isEmpty())
+        {
+            T currentNode = nodes.dequeue();
+            currentRoute.append("->").append(currentNode);
+            visited.add(currentNode);
+
+            if(currentNode == destination)
+            {
+                System.out.println(currentRoute.toString());
+                return;
+            }
+
+            for(T adjacentNode : adjancencyList.get(currentNode))
+            {
+                if(!visited.contains(adjacentNode))
+                {
+                    nodes.enqueue(adjacentNode);
+                }
+            }
+
+        }
+
+    }
+
     public void printAllRoutesDFSHelper(T root, T destination, HashSet<T> visited,
                                                    StringBuilder currentRoute, HashSet<String> routes)
     {
@@ -184,6 +215,8 @@ public class UndirectedAdjacencyList<T> implements ShortestPath<T>, Search<T>, S
 
             }
         }
+
+
     }
 
     public HashSet<String> printAllRoutes(T root, T destination)
@@ -196,8 +229,17 @@ public class UndirectedAdjacencyList<T> implements ShortestPath<T>, Search<T>, S
                     new StringBuilder("->"+root+"->"+adjacent), new HashSet<String>());
         }
 
+        System.out.println("printing BFS helper ... ");
+
+        for(T adjacent : adjancencyList.get(root))
+        {
+            printAllRoutesBFSHelper(adjacent, destination, new HashSet<T>(Arrays.asList(adjacent, root)),
+                    new StringBuilder("->"+root));
+        }
         return routes;
     }
+
+
     public boolean searchNode(T searchKey,
                               Set<T> nodes,
                               Map<T, Set<T>> adjancencyList,
