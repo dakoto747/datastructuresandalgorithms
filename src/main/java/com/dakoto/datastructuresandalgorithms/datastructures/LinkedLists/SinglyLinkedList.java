@@ -83,6 +83,11 @@ public class SinglyLinkedList<T> implements DataStructure, List {
     }
 
     @Override
+    public java.util.List toList() {
+        return null;
+    }
+
+    @Override
     public SinglyLinkedList<Integer> createFromInteger(int integer){
 
         int digit = integer % 10;

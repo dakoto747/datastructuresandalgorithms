@@ -2,6 +2,8 @@ package com.dakoto.datastructuresandalgorithms.datastructures;
 
 import com.dakoto.datastructuresandalgorithms.datastructures.LinkedLists.SinglyLinkedList;
 
+import java.util.List;
+
 public class Queue<T> implements DataStructure {
 //reset tail
     private SinglyLinkedList<T> head;
@@ -86,5 +88,10 @@ public class Queue<T> implements DataStructure {
     @Override
     public int getSize() {
         return this.size;
+    }
+
+    @Override
+    public List toList() {
+        return null;
     }
 }

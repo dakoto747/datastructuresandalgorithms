@@ -3,6 +3,8 @@ package com.dakoto.datastructuresandalgorithms.datastructures.trees;
 import com.dakoto.datastructuresandalgorithms.algorithms.search.Search;
 import com.dakoto.datastructuresandalgorithms.datastructures.Queue;
 
+import java.util.List;
+
 /**
  *
  *
@@ -181,6 +183,11 @@ public class BinaryTree<T> implements Tree<T>, Search<T>, Cloneable{
     @Override
     public int getSize() {
         return 0;
+    }
+
+    @Override
+    public List toList() {
+        return null;
     }
 
     @Override

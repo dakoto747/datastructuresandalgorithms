@@ -43,4 +43,9 @@ public class GraphNode<T> {
 
         edges.add(edge);
     }
+
+    public Set<Edge> getEdges()
+    {
+        return edges;
+    }
 }

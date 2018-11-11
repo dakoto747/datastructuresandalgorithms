@@ -2,6 +2,8 @@ package com.dakoto.datastructuresandalgorithms.datastructures;
 
 import com.dakoto.datastructuresandalgorithms.datastructures.LinkedLists.SinglyLinkedList;
 
+import java.util.List;
+
 public class Stack<T> implements DataStructure {
 //reset head
     private SinglyLinkedList<T> linkedList;
@@ -85,6 +87,11 @@ public class Stack<T> implements DataStructure {
     public int getSize() {
 
         return this.size;
+    }
+
+    @Override
+    public List toList() {
+        return null;
     }
 
     public void setEmpty(boolean empty) {

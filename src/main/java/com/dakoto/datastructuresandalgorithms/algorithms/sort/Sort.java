@@ -7,7 +7,14 @@ public interface Sort<T extends Comparable> {
 
     enum Order{Ascending, Descending};
 
-    void topologicalSort();
+    default void topologicalSort()
+    {
+        /*
+         * Run DFS and output reverse of finishing times of vertices.
+         * Everytime you visit a vertex, you can add it to a list.
+         *
+         */
+    };
 
     // 2359
     // 8762

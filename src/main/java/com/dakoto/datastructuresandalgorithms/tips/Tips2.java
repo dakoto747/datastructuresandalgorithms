@@ -112,9 +112,15 @@ public class Tips2 {
      *
      * can you break the problem into classes and methods that make it easier on you ? like in Langton's Ant
      *
+     * practice talking out loud
+     * empty your head of all the ideas.
+     * Fresh mind
+     *
      * do the housekeeping in place. stop skipping the house keeping. the tracker variables, etc like total in mergesort
      *
-     *
+     * linkedlist good for dynamic list where order doesn't matter... binary tree/ heap good for where order matters
+     * like text cursor etc
+     *  AVL Tree
      *
 
      */

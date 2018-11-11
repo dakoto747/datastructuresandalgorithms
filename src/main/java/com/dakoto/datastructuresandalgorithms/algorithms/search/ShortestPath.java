@@ -4,7 +4,13 @@ import com.dakoto.datastructuresandalgorithms.datastructures.graph.Graph;
 
 public interface ShortestPath<T> extends Graph<T> {
 
-    default void findShortestPathInAcyclicGraph(T source, T destination)
+
+    /*
+     * A path is a sequence of edges and each of those edges has to be in the set of Edges E of the graph
+     */
+
+
+    default void findShortestPathInDirectedAcyclicGraph(T source, T destination)
     {
         dijkstraSearch(source, destination);
     }

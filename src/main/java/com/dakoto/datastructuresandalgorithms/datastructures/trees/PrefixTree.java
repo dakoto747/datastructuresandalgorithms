@@ -25,7 +25,7 @@ that it knows about. Side benefit: fast and space-efficient string searching.
 
     }
 
-    public PrefixTree(T character)
+    public PrefixTree(Character character)
     {
         this();
         this.character = character;
