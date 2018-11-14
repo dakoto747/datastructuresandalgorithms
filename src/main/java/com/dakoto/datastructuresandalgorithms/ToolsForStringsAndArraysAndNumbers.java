@@ -25,6 +25,8 @@ public class ToolsForStringsAndArraysAndNumbers
         // pay attention to case: uppercase, lowercase,
         // pay attention to format: ascii, unicode, etc
         // it may be easier to compute indices (indexes)
+        // ascii arrays for indexing into: it's really valid : ascii: 256, unicode:
+        //UTF-8 uses the ASCII set for the first 128 characters. That's handy because it means ASCII text is also valid in UTF-8.
 
     }
 
@@ -48,6 +50,8 @@ public class ToolsForStringsAndArraysAndNumbers
         //  never code your brute force
         // how many ways are the elements you deal with different?
         // it may be easier to compute indices (indexes)
+        // binary search
+        // divide the problem into 3s or
 
     }
 
