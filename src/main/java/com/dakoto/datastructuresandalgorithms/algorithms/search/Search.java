@@ -2,7 +2,7 @@ package com.dakoto.datastructuresandalgorithms.algorithms.search;
 
 import java.util.List;
 
-public interface Search<T> {
+public interface Search<T extends Comparable> {
 
 //DFS and BFS aren't only for graphs, you can use them on various data structures
 
@@ -39,7 +39,32 @@ public interface Search<T> {
         return false;
     }
 
-    default boolean binarySearch(List<T> key){
+    default boolean binarySearch(List<T> keys, T key)
+    {
+
+        int start = 0;
+        int end = keys.size() - 1;
+
+        while(start <= end)
+        {
+            int mid = (start + end) / 2;
+
+            T midKey = keys.get(mid);
+
+            if(midKey == key)
+            {
+                return true;
+            }
+            else if(midKey.compareTo(key) == 1) // else if(midKey < key)
+            {
+                start = mid + 1;
+            }
+            else // midKey > key
+            {
+                end = mid - 1;
+            }
+
+        }
 
         return false;
     }
