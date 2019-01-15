@@ -88,8 +88,11 @@ public interface Sort<T extends Comparable> {
     }
 
 
-    default List<T> quickSort(List<T> elements){
+    default List<T> quickSort(List<T> elements)
+    {
 
         return null;
     }
+
+    default void getPartition
 }

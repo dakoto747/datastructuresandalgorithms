@@ -122,6 +122,9 @@ public class Tips2 {
      * like text cursor etc
      *  AVL Tree
      *
+     *  base-case and build like in dynamic programming is a useful way to think about recursive algorithms or recursive
+     *  data structures
+     *
 
      */
 }

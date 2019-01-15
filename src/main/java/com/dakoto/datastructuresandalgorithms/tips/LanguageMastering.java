@@ -3,6 +3,8 @@ package com.dakoto.datastructuresandalgorithms.tips;
 public class LanguageMastering {
 
     /**
+     *
+     * name variables well and document your code well : it will save you a tonn of time of debugging: figuring out what variable is what
      *  1. understand syntax
      *  2. understand control (for, while, dowhile)
      *  3. understand main boilerplate(int main, public static void main, if __name__ == "__main__": )
