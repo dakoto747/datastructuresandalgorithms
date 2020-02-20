@@ -159,6 +159,7 @@ class MinimumCoinsForAmountProblem{
         int amount_left = amount;
         boolean keep_looking = true;
         int coin_count = 0;
+
         for (int i = sortedListOfCoins.length - 1; i > 0 && keep_looking; i--){
             
             amount_left = amount % sortedListOfCoins[i];
@@ -169,6 +170,7 @@ class MinimumCoinsForAmountProblem{
     }
 }
 
+// test
 class LongestCommonSubsequenceProblem{
     public static int longestSubsequence(String string1, String string2){
         if(string1.charAt(0) == string2.charAt(0)){
